@@ -1,0 +1,57 @@
+/* global styles */
+body{
+    padding: 10px;
+}
+.container{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.card{
+    background-color: palevioletred;
+    padding: 2rem;
+    border-radius: 16px;
+    border: 6px pink solid;
+}
+
+.heading{
+    font-family: 'Inter',Arial, Helvetica, sans-serif;
+}
+
+.display{
+    background-color: pink;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    border-radius: 10px;
+    font-family: 'Operator Mono Lig' ,'monospace';
+    font-size: larger;
+
+}
+
+.btn{
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 16px;
+    border: none;
+    font-weight: 500;
+    font-family: 'Inter';
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+.btn:hover{
+    transform: scale(1.039);
+}
+
+
+
+
+
+/* card styles */
+
+/* input styles */
+
+/* button styles */
+
+/* animations (optional) */
