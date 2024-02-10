@@ -5,16 +5,19 @@
 // for tag - document.querySelector("tagName")
 // to select multiple elements at once, use document.querySelectorAll()
 
-let genBtn = document.querySelector('#genbtn');
-let display = document.querySelector('.display');
+let genBtn = document.querySelector("#genbtn");
+let display = document.querySelector(".display");
 
-genBtn.addEventListener('click',()=>{
-  display.innerText = passGen()
-})
+genBtn.addEventListener("click", () => {
+  display.innerText = passGen();
+});
 
+// genBtn.addEventListener('onclick', () => {
+
+// })
 
 // password generating function
-function passGen(){
+function passGen() {
   /// 8 characters
   /// a capital letter
   // a symbol
@@ -25,7 +28,7 @@ function passGen(){
   const seed = "?@$-_,.+%";
 
   // step 1
-  for (let i = 0; i < 8; i++) {
+  for (let i = 0; i < 16; i++) {
     /*
         Math.random() returns a random decimal value between 0 & 1
         Math.round() rounds a decimal value to the nearest interger.
@@ -35,10 +38,10 @@ function passGen(){
   }
 
   //  step 2
-  for (let j = 0; j < 4; j++) {
+  for (let j = 0; j < 9; j++) {
     // We use 7 in Math.random() because we need a number between 0 and 8, which is the range of values found in finalPassword
 
-    let randomNumber = Math.round(Math.random() * 7);
+    let randomNumber = Math.round(Math.random() * 15);
     let charAtIndex = finalPassword[randomNumber].toLowerCase();
     finalPassword = finalPassword.replace(
       finalPassword[randomNumber],
@@ -46,19 +49,18 @@ function passGen(){
     );
   }
 
-  // step 3 - 
+  // step 3 -
 
   // We use 7 in Math.random() because we need a number between 0 and 8, which is the range of values found in finalPassword
   // We use 9 in the second Math.random() because we need a number between 0 and 9, which is a random single digit number
 
   finalPassword = finalPassword.replace(
-    finalPassword[Math.round(Math.random() * 7)],
+    finalPassword[Math.round(Math.random() * 15)],
     Math.round(Math.random() * 9)
   );
 
   // step 4
-  for (let k = 0; k < 3; k++) {
-
+  for (let k = 0; k < 4; k++) {
     // We use 8 in Math.random() because we need a number between 0 and 9, which is the range of values found in seed
     let randomNumber = Math.round(Math.random() * 8);
     let charAtIndex = seed[randomNumber];
@@ -70,17 +72,13 @@ function passGen(){
   return finalPassword;
 }
 
-   
-
+document.querySelector(".btn").innerHTML;
 
 // copy password function
 
-
-
-
 // ASSIGNMENT
 /*
-1. IMPROVE THE PASSGEN FUNCTION TO RETURN A PASSWORD STRING WITH VARIABLE LENGTH BETWEEN 8 & 16
+1. IMPROVE THE PASSGEN FUNCTION TO RETURN A PASSWORD STRING WITH VARIABLE LENGTH BETWEEN 8 & 16 done
 
 2. IMPROVE THE GENERATE BUTTON TO SHOW A TEXT (PASSWORD GENERATED) FOR A FEW SECONDS  WHEN THE PASSWORD IS GENERATED
 */
